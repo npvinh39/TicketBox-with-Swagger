@@ -1,0 +1,1149 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Ticketbox Mock API",
+        "description": "This is a mock API for the Ticketbox application.",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000",
+            "description": "Local server"
+        }
+    ],
+    "paths": {
+        "/api/v1/organizers": {
+            "get": {
+                "tags": [
+                    "Organizers"
+                ],
+                "summary": "Get all organizers",
+                "description": "Get all organizers",
+                "operationId": "getOrganizers",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Organizers"
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Organizers"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Organizers"
+                ],
+                "summary": "Create a new organizer",
+                "description": "Create a new organizer",
+                "operationId": "createOrganizer",
+                "requestBody": {
+                    "description": "Organizer object that needs to be added to the store",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Organizers"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Organizers"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/organizers/{organizerId}": {
+            "get": {
+                "tags": [
+                    "Organizers"
+                ],
+                "summary": "Get organizer by organizerId",
+                "description": "Get organizer by organizerId",
+                "operationId": "getOrganizerById",
+                "parameters": [
+                    {
+                        "name": "organizerId",
+                        "in": "path",
+                        "description": "ID of organizer to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Organizers"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Organizers"
+                ],
+                "summary": "Update organizer by organizerId",
+                "description": "Update organizer by organizerId",
+                "operationId": "updateOrganizerById",
+                "parameters": [
+                    {
+                        "name": "organizerId",
+                        "in": "path",
+                        "description": "ID of organizer to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Organizer object that needs to be added to the store",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Organizers"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Organizers"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Organizers"
+                ],
+                "summary": "Delete organizer by organizerId",
+                "description": "Delete organizer by organizerId",
+                "operationId": "deleteOrganizerById",
+                "parameters": [
+                    {
+                        "name": "organizerId",
+                        "in": "path",
+                        "description": "ID of organizer to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Organizers"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/events/{eventId}/venues": {
+            "get": {
+                "tags": [
+                    "Venues"
+                ],
+                "summary": "Get all venues",
+                "description": "Get all venues",
+                "operationId": "getVenues",
+                "parameters": [
+                    {
+                        "name": "eventId",
+                        "in": "path",
+                        "description": "ID of event to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Venues"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Venues"
+                ],
+                "summary": "Create a new venue",
+                "description": "Create a new venue",
+                "operationId": "createVenue",
+                "parameters": [
+                    {
+                        "name": "eventId",
+                        "in": "path",
+                        "description": "ID of event to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Venue object that needs to be added to the store",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Venues"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Venues"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v1/events/{eventId}/venues/{venueId}": {
+            "get": {
+                "tags": [
+                    "Venues"
+                ],
+                "summary": "Get venue by venueId",
+                "description": "Get venue by venueId",
+                "operationId": "getVenueById",
+                "parameters": [
+                    {
+                        "name": "eventId",
+                        "in": "path",
+                        "description": "ID of event to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "venueId",
+                        "in": "path",
+                        "description": "ID of venue to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Venues"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Venues"
+                ],
+                "summary": "Update venue by venueId",
+                "description": "Update venue by venueId",
+                "operationId": "updateVenueById",
+                "parameters": [
+                    {
+                        "name": "eventId",
+                        "in": "path",
+                        "description": "ID of event to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "venueId",
+                        "in": "path",
+                        "description": "ID of venue to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Venue object that needs to be added to the store",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Venues"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Venues"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Venues"
+                ],
+                "summary": "Delete venue by venueId",
+                "description": "Delete venue by venueId",
+                "operationId": "deleteVenueById",
+                "parameters": [
+                    {
+                        "name": "eventId",
+                        "in": "path",
+                        "description": "ID of event to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "venueId",
+                        "in": "path",
+                        "description": "ID of venue to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/v1/organizers/{organizerId}/events/{eventId}": {
+            "get": {
+                "tags": [
+                    "Events"
+                ],
+                "summary": "Get event by eventId",
+                "description": "Get event by eventId",
+                "operationId": "getEventById",
+                "parameters": [
+                    {
+                        "name": "organizerId",
+                        "in": "path",
+                        "description": "ID of organizer to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "eventId",
+                        "in": "path",
+                        "description": "ID of event to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Events"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Events"
+                ],
+                "summary": "Add a new event",
+                "description": "Add a new event",
+                "operationId": "addNewEvent",
+                "parameters": [
+                    {
+                        "name": "organizerId",
+                        "in": "path",
+                        "description": "ID of organizer to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Event object that needs to be added to the store",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Events"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Events"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Events"
+                ],
+                "summary": "Update event by eventId",
+                "description": "Update event by eventId",
+                "operationId": "updateEventById",
+                "parameters": [
+                    {
+                        "name": "organizerId",
+                        "in": "path",
+                        "description": "ID of organizer to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "eventId",
+                        "in": "path",
+                        "description": "ID of event to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Event object that needs to be added to the store",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Events"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Events"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Events"
+                ],
+                "summary": "Delete event by eventId",
+                "description": "Delete event by eventId",
+                "operationId": "deleteEventById",
+                "parameters": [
+                    {
+                        "name": "organizerId",
+                        "in": "path",
+                        "description": "ID of organizer to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "eventId",
+                        "in": "path",
+                        "description": "ID of event to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/api/v1/organizers/{organizerId}/events/{eventId}/tickets": {
+            "get": {
+                "tags": [
+                    "Tickets"
+                ],
+                "summary": "Get tickets by eventId",
+                "description": "Get tickets by eventId",
+                "operationId": "getTicketsByEventId",
+                "parameters": [
+                    {
+                        "name": "organizerId",
+                        "in": "path",
+                        "description": "ID of organizer to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "eventId",
+                        "in": "path",
+                        "description": "ID of event to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tickets"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Tickets"
+                ],
+                "summary": "Add a new ticket",
+                "description": "Add a new ticket",
+                "operationId": "addNewTicket",
+                "parameters": [
+                    {
+                        "name": "organizerId",
+                        "in": "path",
+                        "description": "ID of organizer to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "eventId",
+                        "in": "path",
+                        "description": "ID of event to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Ticket object that needs to be added to the store",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Tickets"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tickets"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Tickets"
+                ],
+                "summary": "Update ticket by ticketId",
+                "description": "Update ticket by ticketId",
+                "operationId": "updateTicketById",
+                "parameters": [
+                    {
+                        "name": "organizerId",
+                        "in": "path",
+                        "description": "ID of organizer to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "eventId",
+                        "in": "path",
+                        "description": "ID of event to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "ticketId",
+                        "in": "path",
+                        "description": "ID of ticket to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Ticket object that needs to be added to the store",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Tickets"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Tickets"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Tickets"
+                ],
+                "summary": "Delete ticket by ticketId",
+                "description": "Delete ticket by ticketId",
+                "operationId": "deleteTicketById",
+                "parameters": [
+                    {
+                        "name": "organizerId",
+                        "in": "path",
+                        "description": "ID of organizer to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "eventId",
+                        "in": "path",
+                        "description": "ID of event to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "ticketId",
+                        "in": "path",
+                        "description": "ID of ticket to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "basicAuth": {
+                "type": "http",
+                "scheme": "basic"
+            }
+        },
+        "schemas": {
+            "Venues": {
+                "type": "object",
+                "properties": {
+                    "venueId": {
+                        "type": "ObjectId",
+                        "example": "5f7f5c3a9b3f3d0f7c9b1b1a"
+                    },
+                    "name": {
+                        "type": "string",
+                        "example": "Theatre Royal"
+                    },
+                    "address": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "streetAddress": {
+                                    "type": "string",
+                                    "example": "100 Main Street"
+                                },
+                                "addressLocality": {
+                                    "type": "string",
+                                    "example": "London"
+                                },
+                                "addressRegion": {
+                                    "type": "string",
+                                    "example": "London"
+                                },
+                                "postalCode": {
+                                    "type": "string",
+                                    "example": "EC1 1AA"
+                                },
+                                "addressCountry": {
+                                    "type": "string",
+                                    "example": "UK"
+                                }
+                            },
+                            "required": [
+                                "streetAddress",
+                                "addressLocality",
+                                "addressRegion",
+                                "postalCode",
+                                "addressCountry"
+                            ]
+                        }
+                    },
+                    "geo": {
+                        "type": "object",
+                        "properties": {
+                            "latitude": {
+                                "type": "number",
+                                "example": 51.5167
+                            },
+                            "longitude": {
+                                "type": "number",
+                                "example": 0.1167
+                            }
+                        }
+                    },
+                    "sessionList": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "sessionId": {
+                                    "type": "ObjectId",
+                                    "example": "5f7f5c3a9b3f3d0f7c9b1b1a"
+                                },
+                                "eventId": {
+                                    "type": "ObjectId",
+                                    "example": "5f7f5c3a9b3f3d0f7c9b1b1a"
+                                }
+                            }
+                        }
+                    },
+                    "description": {
+                        "type": "string",
+                        "example": "Theatre Royal is a theatre and Grade I listed building in the city of London, located in Drury Lane."
+                    },
+                    "image": {
+                        "type": "string"
+                    },
+                    "capacity": {
+                        "type": "number",
+                        "example": 1000
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                },
+                "required": [
+                    "name",
+                    "address",
+                    "geo",
+                    "sessionList",
+                    "description",
+                    "image",
+                    "capacity"
+                ],
+                "xml": {
+                    "name": "Venues"
+                }
+            },
+            "Events": {
+                "type": "object",
+                "properties": {
+                    "eventId": {
+                        "type": "ObjectId",
+                        "example": "5f7f5c3a9b3f3d0f7c9b1b1a"
+                    },
+                    "organizerId": {
+                        "type": "ObjectId",
+                        "example": "5f7f5c3a9b3f3d0f7c9b1b1a"
+                    },
+                    "name": {
+                        "type": "string",
+                        "example": "Event 1"
+                    },
+                    "startDate": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "endDate": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "status": {
+                        "type": "string",
+                        "example": "open"
+                    },
+                    "description": {
+                        "type": "string",
+                        "example": "Event 1 description"
+                    },
+                    "session": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "sessionId": {
+                                    "type": "ObjectId",
+                                    "example": "5f7f5c3a9b3f3d0f7c9b1b1a"
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "example": "Morning Session"
+                                },
+                                "venueId": {
+                                    "type": "ObjectId",
+                                    "example": "5f7f5c3a9b3f3d0f7c9b1b1a"
+                                },
+                                "seat": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "seatId": {
+                                                "type": "ObjectId",
+                                                "example": "5f7f5c3a9b3f3d0f7c9b1b1a"
+                                            },
+                                            "name": {
+                                                "type": "string",
+                                                "example": "A1"
+                                            },
+                                            "description": {
+                                                "type": "string",
+                                                "example": "A1"
+                                            },
+                                            "price": {
+                                                "type": "number",
+                                                "example": 100
+                                            },
+                                            "status": {
+                                                "type": "string",
+                                                "example": "open"
+                                            }
+                                        }
+                                    }
+                                },
+                                "timeIn": {
+                                    "type": "string",
+                                    "format": "date-time"
+                                },
+                                "timeOut": {
+                                    "type": "string",
+                                    "format": "date-time"
+                                },
+                                "createdAt": {
+                                    "type": "string",
+                                    "format": "date-time"
+                                },
+                                "updatedAt": {
+                                    "type": "string",
+                                    "format": "date-time"
+                                }
+                            }
+                        }
+                    },
+                    "purchaseRequest": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "purchaseRequestId": {
+                                    "type": "ObjectId",
+                                    "example": "4f7f5c3a9b3f3d0f7c9b1b1a"
+                                },
+                                "ticketId": {
+                                    "type": "ObjectId",
+                                    "example": "4f7f5c3a9b3f3d0f7c9b1b1a"
+                                },
+                                "sessionId": {
+                                    "type": "ObjectId",
+                                    "example": "4f7f5c3a9b3f3d0f7c9b1b1a"
+                                },
+                                "eventId": {
+                                    "type": "ObjectId",
+                                    "example": "4f7f5c3a9b3f3d0f7c9b1b1a"
+                                },
+                                "status": {
+                                    "type": "string",
+                                    "example": "open"
+                                }
+                            }
+                        }
+                    },
+                    "image": {
+                        "type": "string"
+                    },
+                    "date": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "venueId": {
+                        "type": "ObjectId",
+                        "example": "4f7f5c3a9b3f3d0f7c9b1b1a"
+                    }
+                },
+                "required": [
+                    "organizerId",
+                    "name",
+                    "startDate",
+                    "endDate",
+                    "status",
+                    "description",
+                    "session",
+                    "purchaseRequest",
+                    "image",
+                    "date",
+                    "venueId"
+                ],
+                "xml": {
+                    "name": "Events"
+                }
+            },
+            "Organizers": {
+                "type": "object",
+                "properties": {
+                    "organizerId": {
+                        "type": "ObjectId",
+                        "example": "5f7f5c3a9b3f3d0f7c9b1b1a"
+                    },
+                    "name": {
+                        "type": "string",
+                        "example": "John Doe JSC"
+                    },
+                    "contactPoint": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string",
+                                    "example": "John Doe"
+                                },
+                                "email": {
+                                    "type": "string",
+                                    "example": "email@example.com"
+                                },
+                                "telephone": {
+                                    "type": "string",
+                                    "example": "09123456789"
+                                }
+                            }
+                        }
+                    },
+                    "showList": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "eventId": {
+                                    "type": "ObjectId",
+                                    "example": "5f7f5c3a9b3f3d0f7c9b1b1a"
+                                }
+                            }
+                        }
+                    },
+                    "image": {
+                        "type": "string"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                },
+                "required": [
+                    "name",
+                    "contactPoint",
+                    "showList",
+                    "image"
+                ],
+                "xml": {
+                    "name": "Organizers"
+                }
+            },
+            "Tickets": {
+                "type": "object",
+                "properties": {
+                    "ticketId": {
+                        "type": "ObjectId",
+                        "example": "5f7f5c3a9b3f3d0f7c9b1b1a"
+                    },
+                    "eventId": {
+                        "type": "ObjectId",
+                        "example": "5f7f5c3a9b3f3d0f7c9b1b1a"
+                    },
+                    "sessionId": {
+                        "type": "ObjectId",
+                        "example": "5f7f5c3a9b3f3d0f7c9b1b1a"
+                    },
+                    "seatId": {
+                        "type": "ObjectId",
+                        "example": "5f7f5c3a9b3f3d0f7c9b1b1a"
+                    },
+                    "type": {
+                        "type": "string",
+                        "example": "VIP / A1"
+                    },
+                    "reservationCapacity": {
+                        "type": "number",
+                        "example": 500
+                    },
+                    "actualCapacity": {
+                        "type": "number",
+                        "example": 500
+                    },
+                    "price": {
+                        "type": "number",
+                        "example": 1000
+                    },
+                    "priceCat": {
+                        "type": "string"
+                    },
+                    "remaining": {
+                        "type": "number",
+                        "example": 100
+                    },
+                    "description": {
+                        "type": "string",
+                        "example": "Ticket VIP description"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                },
+                "required": [
+                    "eventId",
+                    "sessionId",
+                    "seatId",
+                    "type",
+                    "reservationCapacity",
+                    "actualCapacity",
+                    "price",
+                    "priceCat",
+                    "remaining"
+                ],
+                "xml": {
+                    "name": "Tickets"
+                }
+            }
+        }
+    }
+}
