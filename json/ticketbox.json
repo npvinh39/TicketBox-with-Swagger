@@ -7,7 +7,7 @@
     },
     "servers": [
         {
-            "url": "http://localhost:3000",
+            "url": "https://virtserver.swaggerhub.com/npvinh39/ticketbox/1.0.0",
             "description": "Local server"
         }
     ],
@@ -430,6 +430,15 @@
                         "schema": {
                             "type": "string"
                         }
+                    },
+                    {
+                        "name": "eventId",
+                        "in": "path",
+                        "description": "ID of event to return",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
                     }
                 ],
                 "requestBody": {
@@ -655,15 +664,6 @@
                         "schema": {
                             "type": "string"
                         }
-                    },
-                    {
-                        "name": "ticketId",
-                        "in": "path",
-                        "description": "ID of ticket to return",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
                     }
                 ],
                 "requestBody": {
@@ -714,15 +714,6 @@
                         "schema": {
                             "type": "string"
                         }
-                    },
-                    {
-                        "name": "ticketId",
-                        "in": "path",
-                        "description": "ID of ticket to return",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
                     }
                 ],
                 "responses": {
@@ -745,7 +736,7 @@
                 "type": "object",
                 "properties": {
                     "venueId": {
-                        "type": "ObjectId",
+                        "type": "string",
                         "example": "5f7f5c3a9b3f3d0f7c9b1b1a"
                     },
                     "name": {
@@ -806,11 +797,11 @@
                             "type": "object",
                             "properties": {
                                 "sessionId": {
-                                    "type": "ObjectId",
+                                    "type": "string",
                                     "example": "5f7f5c3a9b3f3d0f7c9b1b1a"
                                 },
                                 "eventId": {
-                                    "type": "ObjectId",
+                                    "type": "string",
                                     "example": "5f7f5c3a9b3f3d0f7c9b1b1a"
                                 }
                             }
@@ -853,11 +844,11 @@
                 "type": "object",
                 "properties": {
                     "eventId": {
-                        "type": "ObjectId",
+                        "type": "string",
                         "example": "5f7f5c3a9b3f3d0f7c9b1b1a"
                     },
                     "organizerId": {
-                        "type": "ObjectId",
+                        "type": "string",
                         "example": "5f7f5c3a9b3f3d0f7c9b1b1a"
                     },
                     "name": {
@@ -886,7 +877,7 @@
                             "type": "object",
                             "properties": {
                                 "sessionId": {
-                                    "type": "ObjectId",
+                                    "type": "string",
                                     "example": "5f7f5c3a9b3f3d0f7c9b1b1a"
                                 },
                                 "name": {
@@ -894,7 +885,7 @@
                                     "example": "Morning Session"
                                 },
                                 "venueId": {
-                                    "type": "ObjectId",
+                                    "type": "string",
                                     "example": "5f7f5c3a9b3f3d0f7c9b1b1a"
                                 },
                                 "seat": {
@@ -903,7 +894,7 @@
                                         "type": "object",
                                         "properties": {
                                             "seatId": {
-                                                "type": "ObjectId",
+                                                "type": "string",
                                                 "example": "5f7f5c3a9b3f3d0f7c9b1b1a"
                                             },
                                             "name": {
@@ -950,19 +941,19 @@
                             "type": "object",
                             "properties": {
                                 "purchaseRequestId": {
-                                    "type": "ObjectId",
+                                    "type": "string",
                                     "example": "4f7f5c3a9b3f3d0f7c9b1b1a"
                                 },
                                 "ticketId": {
-                                    "type": "ObjectId",
+                                    "type": "string",
                                     "example": "4f7f5c3a9b3f3d0f7c9b1b1a"
                                 },
                                 "sessionId": {
-                                    "type": "ObjectId",
+                                    "type": "string",
                                     "example": "4f7f5c3a9b3f3d0f7c9b1b1a"
                                 },
                                 "eventId": {
-                                    "type": "ObjectId",
+                                    "type": "string",
                                     "example": "4f7f5c3a9b3f3d0f7c9b1b1a"
                                 },
                                 "status": {
@@ -988,7 +979,7 @@
                         "format": "date-time"
                     },
                     "venueId": {
-                        "type": "ObjectId",
+                        "type": "string",
                         "example": "4f7f5c3a9b3f3d0f7c9b1b1a"
                     }
                 },
@@ -1013,7 +1004,7 @@
                 "type": "object",
                 "properties": {
                     "organizerId": {
-                        "type": "ObjectId",
+                        "type": "string",
                         "example": "5f7f5c3a9b3f3d0f7c9b1b1a"
                     },
                     "name": {
@@ -1046,7 +1037,7 @@
                             "type": "object",
                             "properties": {
                                 "eventId": {
-                                    "type": "ObjectId",
+                                    "type": "string",
                                     "example": "5f7f5c3a9b3f3d0f7c9b1b1a"
                                 }
                             }
@@ -1078,19 +1069,19 @@
                 "type": "object",
                 "properties": {
                     "ticketId": {
-                        "type": "ObjectId",
+                        "type": "string",
                         "example": "5f7f5c3a9b3f3d0f7c9b1b1a"
                     },
                     "eventId": {
-                        "type": "ObjectId",
+                        "type": "string",
                         "example": "5f7f5c3a9b3f3d0f7c9b1b1a"
                     },
                     "sessionId": {
-                        "type": "ObjectId",
+                        "type": "string",
                         "example": "5f7f5c3a9b3f3d0f7c9b1b1a"
                     },
                     "seatId": {
-                        "type": "ObjectId",
+                        "type": "string",
                         "example": "5f7f5c3a9b3f3d0f7c9b1b1a"
                     },
                     "type": {
